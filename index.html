@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #body {
+            border: 2px solid blue;
+            height: 420px;
+            margin: 200px;
+            margin-top: 50px;
+            background-color: #8fb0de;
+            border-radius: 20px;
+            background-image: url("calc-1.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            opacity: 0.9;
+
+        }
+
+        .text {
+            color: white;
+            font-size: 20px;
+        }
+
+        h1 {
+            color: white;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 60px;
+            margin: 2px;
+        }
+
+        .input {
+            width: 300px;
+            text-decoration: none;
+            height: 30px;
+            /* -webkit-appearance: none; */
+            appearance: none;
+            margin: 0;
+            text-decoration: none;
+            font-size: 30px;
+
+        }
+
+        .btn {
+            padding: 10px;
+            margin: 20px;
+            background-color: blue;
+            color: white;
+            font-size: 30px;
+            width: 100px;
+            border-radius: 30px;
+            box-shadow: blue 5px;
+
+        }
+
+        #btn1 {
+            padding-top: 10px;
+        }
+
+        .outpot {
+            width: 200px;
+            height: 30px;
+            font-size: 30px;
+            color: red;
+        }
+        /* responsive  */
+        @media (max-width:744px;){
+            #body {
+            /* border: 2px solid blue; */
+            height: 100%;
+            /* margin: 200px; */
+            margin-bottom: 50px;
+            background-color: #8fb0de;
+            /* border-radius: 20px; */
+            background-image: url("calc-1.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            /* opacity: 0.9; */
+
+        }
+
+    }
+    </style>
+</head>
+
+<body>
+    <center id="body">
+        <h1>calculator</h1>
+        <hr><br><br>
+        <input class="input" type="number" id="x" placeholder="enter first number"><br><br>
+        <input class="input" type="number" id="y" placeholder="enter second number"><br><br>
+
+        <button class="btn" type="submit" onclick="add()">+</button>
+        <button class="btn" type="submit" onclick="sub()">-</button>
+        <button class="btn" id="btn1" type="submit" onclick="mul()">*</button>
+        <button class="btn" type="submit" onclick="div()">/</button>
+        <button class="btn" type="submit" onclick="pow()">x^n</button>
+        <br><br>
+
+        <input class="outpot" type="number" disabled id="z" placeholder="output">
+    </center>
+    <script>
+        function add() {
+            if( parseInt(document.getElementById("x").value)  && parseInt(document.getElementById("y").value)){
+            var x = parseInt(document.getElementById("x").value);
+            var y = parseInt(document.getElementById("y").value);
+
+            var z = x + y;
+            document.getElementById("z").value = z}
+            else{
+                alert("please enter both input")
+            }
+
+        } function sub() {
+            if( parseInt(document.getElementById("x").value)  && parseInt(document.getElementById("y").value)){
+            var x = parseInt(document.getElementById("x").value);
+            var y = parseInt(document.getElementById("y").value);
+
+            var z = x - y;
+            document.getElementById("z").value = z}
+            else{
+                alert("please enter both input")
+            }
+
+        }
+        function mul() {
+            if( parseInt(document.getElementById("x").value)  && parseInt(document.getElementById("y").value)){
+            var x = parseInt(document.getElementById("x").value);
+            var y = parseInt(document.getElementById("y").value);
+
+            var z = x * y;
+            document.getElementById("z").value = z}
+            else{
+                alert("please enter both input")
+            }
+
+        }
+        function div() {
+            if( parseInt(document.getElementById("x").value)  && parseInt(document.getElementById("y").value))
+           { var x = parseInt(document.getElementById("x").value);
+            var y = parseInt(document.getElementById("y").value);
+
+            var z = x/y;
+            document.getElementById("z").value = z}
+            else{
+                alert("please enter both input")
+            }
+
+        }
+        function pow() {
+            if( parseInt(document.getElementById("x").value)  && parseInt(document.getElementById("y").value))
+
+           { var x = parseInt(document.getElementById("x").value);
+            var y = parseInt(document.getElementById("y").value);
+            var z=1;
+
+            while(y>0){
+                z=z*x;
+                y=y-1;
+            }
+            document.getElementById("z").value = z
+        }
+        else{
+            alert("please enter input")
+        }
+
+        }
+    </script>
+</body>
+
+</html>
